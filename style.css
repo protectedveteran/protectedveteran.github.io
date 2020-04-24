@@ -78,6 +78,7 @@ main button.lg .chevron {
   font-size: 0.8rem;
 }
 main .dates {
+  font-size: 0.9em;
   margin-bottom: 1rem;
 }
 main .dates div {
@@ -95,8 +96,12 @@ main .dates div span:nth-child(2) {
 main .dates div span:nth-child(3) {
   text-align: left;
 }
-main #not-a-protected-veteran {
+main section.result {
   display: none;
+  background-color: #01a6cf;
+}
+main section.result h2 {
+  color: #fff;
 }
 
 footer {

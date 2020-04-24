@@ -88,7 +88,9 @@ main {
     }
 
     .dates {
+        font-size: 0.9em;
         margin-bottom: 1rem;
+
         div {
             display: flex;
             flex-direction: row;
@@ -106,8 +108,12 @@ main {
         }
     }
 
-    #not-a-protected-veteran {
+    section.result {
         display: none;
+        background-color: $blue1;
+        h2 {
+            color: #fff;
+        }
     }
 }
 
