@@ -107,7 +107,8 @@ main article {
   overflow: hidden;
   display: flex;
   flex-shrink: 0;
-  margin: 0 0 1em;
+  margin: 0 auto 1em;
+  max-width: 600px;
 }
 main article h2 {
   background: #001d71;
