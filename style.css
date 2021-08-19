@@ -1,10 +1,20 @@
+.bg-dark-blue, main button {
+  color: white;
+  background-color: #001d71;
+}
+
+.bg-light-blue, main article .buttons button {
+  color: white;
+  background-color: #01a6cf;
+}
+
 html {
   height: 100%;
 }
 
 body {
   text-align: center;
-  font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -12,10 +22,16 @@ body {
   padding: 0;
   font-size: 18px;
   color: #001d71;
+  display: flex;
 }
 
 a {
   color: #01a6cf;
+}
+
+p {
+  margin: 0;
+  padding: 0;
 }
 
 h1,
@@ -23,60 +39,113 @@ h2,
 h3,
 h4 {
   color: #01a6cf;
+  text-transform: uppercase;
+  font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+  letter-spacing: -0.01em;
+  margin: 0 0 1em;
+}
+
+h1 {
+  font-size: 3rem;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+  margin: 0.75em 0.25rem;
+}
+
+.no-wrap, a {
+  white-space: nowrap;
+}
+
+.hidden {
+  display: none;
 }
 
 header {
   flex: 1;
   padding: 0 2rem;
 }
+header.small h1 {
+  font-size: 1.5rem;
+}
 
 main {
   flex: 9;
   display: flex;
+  flex-direction: column;
   padding: 0 1rem;
 }
-main section {
-  width: 100%;
+main button {
+  height: auto;
+  font-size: 1.5rem;
+  padding: 1.1rem 1.7rem;
+  margin: 0.5rem;
+  line-height: 1.3;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main button.lg {
+  font-size: 2rem;
+}
+main button .chevron {
+  font-size: 1.7rem;
+  line-height: 1.6;
+  margin: 0 0 0 0.25em;
 }
 main article {
   width: 100%;
-  display: none;
   text-align: center;
-  background-color: #f6f5f8;
-  padding: 1rem;
+  background-color: #dfdfe9;
   box-sizing: border-box;
-  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  display: flex;
+  flex-shrink: 0;
+  margin: 0 0 1em;
 }
 main article h2 {
   background: #001d71;
   color: #fff;
-  padding: 0.5rem;
-  margin: -1rem -1rem 0;
+  padding: 1rem 0.5rem;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
+  margin-top: 0;
+  width: 100%;
 }
-main article small {
+main article p {
+  font-size: 30px;
+  padding: 0 1rem;
+  margin: 1.5rem 0;
+}
+main article p.small {
+  font-size: 20px;
   font-style: italic;
   color: #666;
 }
-main button {
-  height: 3rem;
-  font-size: 1.5rem;
-  padding: 0.4rem 1rem;
-  line-height: 1.3;
-  background: #01a6cf;
-  color: #fff;
-  border: none;
-  border-radius: 0.25rem;
-  margin: 0.35rem;
-  cursor: pointer;
+main article p a[href^="#"] {
+  text-decoration: none;
+  color: inherit;
 }
-main button.lg {
-  font-size: 2rem;
-  height: 3.5rem;
+main article * + p {
+  margin-top: 0;
 }
-main button.lg .chevron {
-  font-size: 1.3rem;
+main article > button {
+  margin: 4rem 1.5rem;
+}
+main article .buttons {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+main article .buttons button {
+  font-weight: 700;
+  padding: 0.9rem 1.5rem;
+  margin: 0.5rem;
 }
 main .dates {
   font-size: 0.9em;
@@ -97,17 +166,13 @@ main .dates div span:nth-child(2) {
 main .dates div span:nth-child(3) {
   text-align: left;
 }
-main section.result {
-  display: none;
-  background-color: #01a6cf;
-}
-main section.result h2 {
-  color: #fff;
-}
 
 footer {
   flex: 1;
-  margin: 2rem;
+  margin: 1rem;
+}
+footer p {
+  margin-bottom: 1rem;
 }
 
 .chevron::before {

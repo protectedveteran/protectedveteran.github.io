@@ -1,31 +1,50 @@
-(function () {
-
-    const questions = querySelectorAll('article');
-    const questionsContainer = document.getElementById('questions');
-    const noProtectedSection = document.getElementById('no-protected-veteran');
-    const yesProtectedSection = document.getElementById('yes-protected-veteran');
+function main() {
+    const articles = querySelectorAll('article');
+    const header = document.querySelector('header');
+    const articleNo = articles[articles.length - 2];
+    const articleYes = articles[articles.length - 1];
 
     let currentIndex = 0;
 
-    toggle(questions[currentIndex], true);
-    toggle(noProtectedSection, false);
-    toggle(yesProtectedSection, false);
+    hashChange();
 
     querySelectorAllOnClick('button[value="continue"]', () => {
-        toggle(questions[currentIndex], false);
-        toggle(questions[++currentIndex], true);
+        window.location.hash = `${++currentIndex}`;
     });
 
     querySelectorAllOnClick('button[value="no"]', () => {
-        toggle(noProtectedSection, true);
-        toggle(questionsContainer, false);
-        questions.map(question => toggle(question, false));
+        window.location.hash = `no`;
     });
 
     querySelectorAllOnClick('button[value="yes"]', () => {
-        toggle(yesProtectedSection, true);
-        toggle(questionsContainer, false);
-        questions.map(question => toggle(question, false));
+        window.location.hash = `yes`;
+    });
+
+    function hashChange() {
+        let hash = window.location.hash.substr(1);
+
+        articles.forEach((article) => toggle(article, false));
+
+        hash = hash || '0';
+
+        if (/^\d$/.test(hash)) {
+            if (hash === '0') header.classList.remove('small');
+            else header.classList.add('small');
+
+            toggle(articles[hash], true);
+        } else if (hash === 'no') {
+            header.classList.remove('small');
+            toggle(articleNo, true);
+        } else if (hash === 'yes') {
+            header.classList.remove('small');
+            toggle(articleYes, true);
+        }
+    }
+
+    window.addEventListener('hashchange', hashChange, false);
+
+    header.addEventListener('click', () => {
+        window.location.href = '/';
     });
 
     type Listener = (this: HTMLElement, ev: MouseEvent) => any;
@@ -35,15 +54,16 @@
     }
 
     function querySelectorAllOnClick(selectors: string, listener: Listener) {
-        return querySelectorAll(selectors)
-            .forEach((item: HTMLElement) => {
-                item.addEventListener('click', listener);
-            });
+        return querySelectorAll(selectors).forEach((item: HTMLElement) => {
+            item.addEventListener('click', listener);
+        });
     }
 
     function toggle(element: HTMLElement, show: boolean) {
-        element.style.display = show ? 'block' : 'none';
+        if (show) element.classList.remove('hidden');
+        else element.classList.add('hidden');
         return element;
     }
+}
 
-})();
+main();

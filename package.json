@@ -1,0 +1,22 @@
+{
+    "name": "protectedveteran.github.io",
+    "version": "1.0.0",
+    "description": "A tool to help veterans determine their protected status.",
+    "main": "index.js",
+    "scripts": {
+        "start": "http-server -o",
+        "watch": "yarn watch-css && watch-ts",
+        "watch-css": "sass --watch ./src/style.scss style.css",
+        "watch-ts": "tsc ./src/index.ts --watch --target esnext --outfile script.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/protectedveteran/protectedveteran.github.io.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/protectedveteran/protectedveteran.github.io/issues"
+    },
+    "homepage": "https://github.com/protectedveteran/protectedveteran.github.io#readme"
+}

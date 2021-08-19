@@ -4,86 +4,78 @@
     <head>
         <meta charset="utf-8">
         <title>Am I a Protected Veteran?</title>
+        <meta name="theme-color" content="#01A6CF">
         <meta name="author" content="iambriansreed">
         <meta name="description" content="A simple tool to determine if you are a protected veteran.">
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
         <!-- page content -->
         <header>
-            <h1>Am I a Protected Veteran?</h1>
+            <h1>Am I A Protected Veteran?</h1>
         </header>
         <main>
-            <section id="questions">
-                <article>
-                    <button type="button" class="lg" value="continue">Get Started <span class="chevron right"></span></button>
-                </article>
-                <article>
-                    <h2>Determine Your Veteran Status</h2>
-                    <p class="question">Did you serve on <a href="#" data-info="active-duty">active duty</a> in the U.S. Military?</p>
+            <article class="hidden">
+                <button type="button" class="lg" value="continue">Get Started <span class="chevron right"></span></button>
+            </article>
+            <article class="hidden">
+                <h2>Determine Your Veteran Status</h2>
+                <p class="question">Did you serve on <a href="#fn1" id="r1">active duty*</a> in the U.S. Military?</p>
+                <div class="buttons">
                     <button type="button" value="continue">Yes</button>
                     <button type="button" value="no">No</button>
-                    <small>
-                        <p data-info="active-duty">See <a href="https://www.law.cornell.edu/uscode/text/38/101">38 USC § 101(21)</a> for a full list of service that may be counted as active duty.</p>
-                    </small>
-                </article>
-                <article>
-                    <h2>Determine Your Veteran Status</h2>
-                    <p class="question">Were you dishonorably discharged?</p>
+                </div>
+                <p class="small"><a href="#r1"></a>*See <a target="_blank" href="https://www.law.cornell.edu/uscode/text/38/101">38 USC § 101(21)</a> for a full list of service that may be counted as active duty.</a></p>
+            </article>
+            <article class="hidden">
+                <h2>Determine Your Veteran Status</h2>
+                <p class="question">Were you <strong>dishonorably</strong> discharged?</p>
+                <div class="buttons">
                     <button type="button" value="no">Yes</button>
                     <button type="button" value="continue">No</button>
-                </article>
-                <article>
-                    <h2>DISABLED VETERAN</h2>
-                    <p class="question">Are you a veteran of the U.S. Military who is entitled to compensation under laws administered by the Secretary of Veterans Affairs?</p>
-                    <p class="or">or</p>
-                    <p class="question">Were you discharged or released from active duty because of a service connected disability?</p>
+                </div>
+            </article>
+            <article class="hidden">
+                <h2>Disabled Veteran</h2>
+                <p class="question">Are you entitled to compensation under laws administered by the Secretary of Veterans Affairs?</p>
+                <div class="buttons">
                     <button type="button" value="yes">Yes</button>
                     <button type="button" value="continue">No</button>
-                </article>
-                <article>
-                    <h2>ACTIVE DUTY WARTIME OR CAMPAIGN BADGE VETERAN</h2>
-                    <p class="question">Did you serve on active duty during one or more of the periods of war outlined in 38 U.S.C. § 101?</p>
-                    <div class="dates">
-                        <div>
-                            <span>August 2, 1990</span>
-                            <span>to</span>
-                            <span>Present</span>
-                        </div>
-                        <div>
-                            <span>June 27, 1950</span>
-                            <span>to</span>
-                            <span>January 31, 1955</span>
-                        </div>
-                        <div>
-                            <span>February 28, 1961</span>
-                            <span>to</span>
-                            <span>May 7, 1975</span>
-                        </div>
-                        <div>
-                            <span>August 5, 1964</span>
-                            <span>to</span>
-                            <span>May 7, 1975</span>
-                        </div>
-                    </div>
+                </div>
+            </article>
+            <article class="hidden">
+                <h2>Disabled Veteran</h2>
+                <p class="question">Were you discharged or released from active duty because of a service connected disability?</p>
+                <div class="buttons">
                     <button type="button" value="yes">Yes</button>
                     <button type="button" value="continue">No</button>
-                </article>
-            </section>
-            <section class="result" id="no-protected-veteran">
-                <h2>You are not considered a protected veteran.</h2>
-            </section>
-            <section class="result" id="yes-protected-veteran">
-                <h2>You are considered a protected veteran.</h2>
-            </section>
+                </div>
+            </article>
+            <article class="hidden">
+                <h2>ACTIVE DUTY WARTIME OR CAMPAIGN BADGE VETERAN</h2>
+                <p class="question">Did you earn an expeditionary medal or serve during <span class="no-wrap">World War II</span>?</p>
+                <div class="buttons">
+                    <button type="button" value="yes">Yes</button>
+                    <button type="button" value="continue">No</button>
+                </div>
+            </article>
+            <article class="hidden result" id="result-no">
+                <h2>No</h2>
+                <p>You are not considered a protected veteran.</p>
+                <p class="small">If you have additional questions about your veteran status, please contact the Department of Veterans Affairs at <a href="tel:800-827-1000">1-800-827-1000</a>.</p>
+            </article>
+            <article class="hidden result" id="result-yes">
+                <h2>Yes</h2>
+                <p>You are considered a protected veteran.</p>
+            </article>
         </main>
         <footer>
             <p>The Vietnam Era Veterans' Readjustment Assistance Act of 1974 (VEVRAA), as amended (38 U.S.C. § 4212), prohibits discrimination against protected veterans.</p>
             <p>Under VEVRAA, a veteran may be classified as a "disabled veteran," "recently separated veteran," "active duty wartime or campaign badge veteran," or "Armed Forces service medal veteran."</p>
-            <p>If you do not have a DD-214 Form, or have additional questions about your veteran status, please contact the Department of Veterans Affairs at 1-800-827-1000.</p>
-            <p>Please note that this page provides general information. It is not intended to substitute for the actual law and regulations regarding the program described herein. For more information see: <a href="https://www.dol.gov/agencies/ofccp/veterans/protected-veterans">dol.gov</a>.</p>
+            <p>If you do not have a DD-214 Form, or have additional questions about your veteran status, please contact the Department of Veterans Affairs at <a href="tel:800-827-1000">1-800-827-1000</a>.</p>
+            <p>Please note that this page provides general information. It is not intended to substitute for the actual law and regulations regarding the program described herein. For more information see: <a target="_blank" href="https://www.dol.gov/agencies/ofccp/veterans/protected-veterans">dol.gov</a>.</p>
         </footer>
         <script src="script.js"></script>
     </body>
