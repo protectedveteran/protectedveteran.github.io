@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "start": "http-server -o",
-        "watch": "yarn watch-css && watch-ts",
+        "watch": "yarn watch-css | yarn watch-ts",
         "watch-css": "sass --watch ./src/style.scss style.css",
         "watch-ts": "tsc ./src/index.ts --watch --target esnext --outfile script.js"
     },

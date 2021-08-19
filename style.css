@@ -170,7 +170,9 @@ main .dates div span:nth-child(3) {
 
 footer {
   flex: 1;
-  margin: 1rem;
+  margin: 1rem auto;
+  padding: 0 1rem;
+  max-width: 600px;
 }
 footer p {
   margin-bottom: 1rem;
